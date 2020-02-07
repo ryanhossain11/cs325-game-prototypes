@@ -12,7 +12,7 @@ function make_main_game_state( game )
     function create() {
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
-        background = this.load.image('sky', 'assets/desert.jpg' );
+        this.load.image('sky', 'assets/desert.jpg' );
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
         bouncy.anchor.setTo( 0.5, 0.5 );
