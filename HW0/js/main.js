@@ -4,7 +4,7 @@ function make_main_game_state( game )
 {
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.image( 'sky', 'assets/desert.jpeg' );
+        game.load.image( 'sky', 'assets/desert.jpg' );
     }
 
     var bouncy;
