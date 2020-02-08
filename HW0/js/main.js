@@ -4,7 +4,7 @@ function make_main_game_state( game )
 {
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.image( 'logo', 'assets/phaser.png' );
+        game.load.image( 'sky', 'assets/desert.jpg' );
     }
 
     var bouncy;
@@ -12,6 +12,7 @@ function make_main_game_state( game )
     function create() {
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
+        this.load.image('sky', 'assets/desert.jpg' );
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
         bouncy.anchor.setTo( 0.5, 0.5 );
@@ -24,7 +25,7 @@ function make_main_game_state( game )
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Die", style );
+        var text = game.add.text( game.world.centerX, 15, "Don't DIE!.", style );
         text.anchor.setTo( 0.5, 0.0 );
     }
 
