@@ -15,22 +15,23 @@ window.onload = function() {
     function preload() {
         // Load an image and call it 'logo'.
         //game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.image('background', 'assets/backgrounds/bg_highway.png')
+        game.load.image('background', 'assets/backgrounds/bg_snow.png')
         game.load.spritesheet('walkingChar', 'assets/sprites/character.png')
         game.load.image('car', 'assets/sprites/car.png')
-        game.load.image('rock', 'assets/sprites/rock.png')
+        game.load.image('ball', 'assets/sprites/ball.png')
     }
 
     var bouncy;
     var carSprite;
     var background;
-    var rockSprite;
+
+    var ballSprite;
     var numberOfLives;
     var numberOfLivesText
     var score;
     var scoreCountText;
     var gameOverText;
-    var moveDownThisX; //have the rock move down this X lane
+    var moveDownThisX; //have the  move down this X lane
 
     function create() {
         // Create a sprite at the center of the screen using the 'logo' image.
@@ -56,11 +57,11 @@ window.onload = function() {
         numberOfLives = 3;
         score = 0;
 
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Dodge that rock!.", style );
-        numberOfLivesText = game.add.text( game.world.centerX + 300, 15, numberOfLives, style );
+        var style = { font: "25px Verdana", fill: "#000000", align: "center" };
+        var text = game.add.text( game.world.centerX, 15, "Dont get squished by SNOW!", style );
+        numberOfLivesText = game.add.text( game.world.centerX - 280, 165, numberOfLives, style );
         numberOfLivesText.setText("Lives: " + numberOfLives);
-        scoreCountText = game.add.text( game.world.centerX + 280, 50, score, style );
+        scoreCountText = game.add.text( game.world.centerX - 280, 200, score, style );
         scoreCountText.setText("Score: " + score);
 
         text.anchor.setTo( 0.5, 0.0 );
@@ -68,15 +69,15 @@ window.onload = function() {
         carSprite = game.add.sprite(400, 600, 'car');
         game.physics.enable( carSprite, Phaser.Physics.ARCADE );
         carSprite.anchor.setTo(0.5, 1);
-        carSprite.scale.setTo(0.06, 0.06);
+        carSprite.scale.setTo(0.08, 0.08);
 
         moveDownThisX = game.rnd.integerInRange(171, 570);
-        rockSprite = game.add.sprite(moveDownThisX, 0, 'rock');
-        //rockSprite.scale.setTo(2, 2);
-        game.physics.enable( rockSprite, Phaser.Physics.ARCADE );
-        rockSprite.anchor.setTo(0, 0);
+        ballSprite = game.add.sprite(moveDownThisX, 0, 'ball');
+        //ballSprite.scale.setTo(2, 2);
+        game.physics.enable( ballSprite, Phaser.Physics.ARCADE );
+        ballSprite.anchor.setTo(0, 0);
 
-        gameOverText = game.add.text( game.world.centerX, game.world.centerY, "GAME OVER", style );
+        gameOverText = game.add.text( game.world.centerX, game.world.centerY, "You Is DEAD", style );
 
         gameOverText.visible = false;
     }
@@ -90,14 +91,14 @@ window.onload = function() {
         //bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, game.input.activePointer, 500, 500, 500 );
         if(numberOfLives > 0)
         {
-          game.debug.inputInfo(32, 32);
+          game.debug.inputInfo(350, 350);
           keepCarInBounds();
-          rockStatus();
+          ballStatus();
         }
         else
         {
             gameOverText.visible = true;
-            rockSprite.kill();
+            ballSprite.kill();
             carSprite.kill();
         }
     }
@@ -122,8 +123,8 @@ window.onload = function() {
 
     function decrementLives()
     {
-      rockSprite.kill();
-      spawnRock();
+      ballSprite.kill();
+      spawnBall();
       numberOfLives--;
 
       numberOfLivesText.setText("Lives: " + numberOfLives);
@@ -135,25 +136,25 @@ window.onload = function() {
       scoreCountText.setText("Score: " + score);
     }
 
-    function spawnRock()
+    function spawnBall()
     {
       moveDownThisX = game.rnd.integerInRange(171, 570);
-      rockSprite = game.add.sprite(moveDownThisX, 0, 'rock');
-      game.physics.enable( rockSprite, Phaser.Physics.ARCADE );
-      rockSprite.anchor.setTo(0, 0);
+      ballSprite = game.add.sprite(moveDownThisX, 155, 'ball');
+      game.physics.enable( ballSprite, Phaser.Physics.ARCADE );
+      ballSprite.anchor.setTo(0, 0);
     }
 
-    function rockStatus()
+    function ballStatus()
     {
-      game.physics.arcade.collide(carSprite, rockSprite, decrementLives);
+      game.physics.arcade.collide(carSprite, ballSprite, decrementLives);
 
-      if(rockSprite.y > 600)
+      if(ballSprite.y > 600)
       {
-        rockSprite.kill();
-        incrementScore(); //increment score as soon as rock passes player
-        spawnRock();
+        ballSprite.kill();
+        incrementScore(); //increment score as soon as ball passes player
+        spawnBall();
       }
 
-      game.physics.arcade.moveToXY(rockSprite, moveDownThisX, 800, 200);
+      game.physics.arcade.moveToXY(ballSprite, moveDownThisX, 800, 200);
     }
 };
