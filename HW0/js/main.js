@@ -91,7 +91,7 @@ window.onload = function() {
         //bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, game.input.activePointer, 500, 500, 500 );
         if(numberOfLives > 0)
         {
-          game.debug.inputInfo(350, 350);
+          //game.debug.inputInfo(350, 350);
           keepCarInBounds();
           ballStatus();
         }
