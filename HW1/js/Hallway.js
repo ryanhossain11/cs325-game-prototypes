@@ -64,8 +64,8 @@ BasicGame.Hallway.prototype = {
         this.mathDoor = this.game.add.sprite(184, 307, 'door');
         this.mathDoor.anchor.setTo(0, 1);
 
-        this.gameDoor = this.game.add.sprite(483, 307, 'door');
-        this.gameDoor.anchor.setTo(0, 1);
+        //this.gameDoor = this.game.add.sprite(483, 307, 'door');
+        //this.gameDoor.anchor.setTo(0, 1);
 
         if(this.alreadyEnteredMath)
         {

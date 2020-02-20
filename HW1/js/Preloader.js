@@ -39,12 +39,12 @@ BasicGame.Preloader.prototype = {
 		this.load.image('skychar', 'assets/sprites/skychar.png');
 		this.load.image('fireball', 'assets/sprites/fireball.png');
 		this.load.image('powerup', 'assets/sprites/powerup.png');
-		this.load.image('book', 'assets/sprites/book.png');
+		this.load.image('book', 'assets/sprites/tim.png');
 
 		this.load.image('mathclass', 'assets/maps/mathclassroom.png');
-		this.load.image('gameclass', 'assets/maps/gameclassroom.png');
+		//this.load.image('gameclass', 'assets/maps/gameclassroom.png');
 
-		this.load.image('diploma', 'assets/sprites/diploma.png')
+		//this.load.image('diploma', 'assets/sprites/diploma.png')
 
 		//math questions
 		this.load.image('question1', 'assets/sprites/MathQuestions/question1.png');

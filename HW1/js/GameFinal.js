@@ -159,7 +159,7 @@ BasicGame.GameFinal.prototype = {
 
     tip: function(){
       var style = { font: "25px Verdana", fill: "#000000", align: "center" };
-      this.tipText = this.game.add.text( this.game.world.centerX, this.game.world.centerY, "DESTROY 20 books!", style );
+      this.tipText = this.game.add.text( this.game.world.centerX, this.game.world.centerY, "DESTROY 20 TIM'S!", style );
       this.time.events.add(Phaser.Timer.SECOND * 2, this.removeTipText, this);
     },
 
