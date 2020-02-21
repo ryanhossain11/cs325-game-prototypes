@@ -141,15 +141,15 @@ BasicGame.GameFinal.prototype = {
         }
         else if(this.lifeCount < 1) {
           var style = { font: "25px Verdana", fill: "#000000", align: "center" };
-          var gameOver = this.game.add.text( this.game.world.centerX, this.game.world.centerY, "FAILED TEST! Try again", style );
+          var gameOver = this.game.add.text( this.game.world.centerX, this.game.world.centerY, "YOU IS DEAD Try again", style );
           gameOver.anchor.setTo( 0.5, 0.0 );
           this.time.events.add(Phaser.Timer.SECOND * 2, this.quitGame, this);
         }
         else if (this.score >= 10)
         {
           var style = { font: "25px Verdana", fill: "#000000", align: "center" };
-          var winText = this.game.add.text( this.game.world.centerX, this.game.world.centerY, "YOU WIN AND PASSED YOUR FINAL!", style );
-          var winText2 = this.game.add.text( this.game.world.centerX, this.game.world.centerY + 30, "You now have graduated school", style );
+          var winText = this.game.add.text( this.game.world.centerX, this.game.world.centerY, "YOU ARE A WEENER MAN", style );
+          var winText2 = this.game.add.text( this.game.world.centerX, this.game.world.centerY + 30, "Should we add a new level?", style );
 
           winText.anchor.setTo( 0.5, 0.0 );
           winText2.anchor.setTo( 0.5, 0.0 );

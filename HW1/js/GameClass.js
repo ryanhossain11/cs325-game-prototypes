@@ -64,8 +64,8 @@ BasicGame.GameClass.prototype = {
         this.boy = this.game.add.sprite(635, 587, 'character');
         this.boy.frame = 0;
         this.boy.anchor.setTo(0.5, 1);
-        this.boy.animations.add('walkDown', [0,1,2,3], 12, false);
-        this.boy.animations.add('walkUp', [12,13,14,15], 12, false);
+        this.boy.animations.add('walkDown', [0,1,2,3], 24, false);
+        this.boy.animations.add('walkUp', [12,13,14,15], 24, false);
         this.boy.animations.add('walkRight', [4,5,6,7], 12, false);
         this.boy.animations.add('walkLeft', [11,10,9,8], 12, false);
 

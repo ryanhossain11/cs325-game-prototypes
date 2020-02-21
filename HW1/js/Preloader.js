@@ -42,7 +42,7 @@ BasicGame.Preloader.prototype = {
 		this.load.image('book', 'assets/sprites/tim.png');
 
 		this.load.image('mathclass', 'assets/maps/mathclassroom.png');
-		//this.load.image('gameclass', 'assets/maps/gameclassroom.png');
+		this.load.image('gameclass', 'assets/maps/gameclassroom.png');
 
 		//this.load.image('diploma', 'assets/sprites/diploma.png')
 

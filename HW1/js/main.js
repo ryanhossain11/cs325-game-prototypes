@@ -12,8 +12,8 @@ window.onload = function() {
 	game.state.add('Preloader', BasicGame.Preloader);
 	game.state.add('MainMenu', BasicGame.MainMenu);
 	game.state.add('Hallway', BasicGame.Hallway);
-	//game.state.add('MathClass', BasicGame.MathClass);
-	//game.state.add('MathFinal', BasicGame.MathFinal);
+	game.state.add('MathClass', BasicGame.MathClass);
+	game.state.add('MathFinal', BasicGame.MathFinal);
 	game.state.add('GameClass', BasicGame.GameClass);
 	game.state.add('GameFinal', BasicGame.GameFinal);
 	game.state.add('Diploma', BasicGame.Diploma);
