@@ -273,7 +273,7 @@ window.onload = function() {
         if(gameOver)
         {
             var style = { font: "25px Verdana", fill: "#ff0000", align: "center" };
-            var text = this.game.add.text( game.world.centerX, game.world.centerY, "Wow, you just ruined some cops mission. Game Over!", style );
+            var text = this.game.add.text( game.world.centerX, game.world.centerY, "Damn, you really not boutta let the chicken cross the road", style );
             text.anchor.setTo( 0.5, 0.0 );
         }
 
